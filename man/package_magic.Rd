@@ -4,10 +4,12 @@
 \alias{package_magic}
 \title{Automatically create, update, and validate package files}
 \usage{
-package_magic(quiet = TRUE, error_on = "note")
+package_magic(quiet = TRUE, github_actions = TRUE, error_on = "note")
 }
 \arguments{
-\item{quiet}{If \code{TRUE}, all output is suppressed.}
+\item{quiet}{Should all output be suppressed?}
+
+\item{github_actions}{Should GitHub Action files be written?}
 
 \item{error_on}{Whether to throw an error on \code{R CMD check} failures.
 Note that the check is always completed (unless a timeout happens),

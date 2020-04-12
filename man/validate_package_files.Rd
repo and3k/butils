@@ -4,10 +4,10 @@
 \alias{validate_package_files}
 \title{Automatically update package files}
 \usage{
-validate_package_files(quiet, error_on)
+validate_package_files(quiet = TRUE, error_on = "note")
 }
 \arguments{
-\item{quiet}{If \code{TRUE}, all output is suppressed.}
+\item{quiet}{Should all output be suppressed?}
 
 \item{error_on}{Whether to throw an error on \code{R CMD check} failures.
 Note that the check is always completed (unless a timeout happens),

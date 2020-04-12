@@ -4,10 +4,10 @@
 \alias{update_package_files}
 \title{Automatically update package files}
 \usage{
-update_package_files(quiet)
+update_package_files(quiet = TRUE)
 }
 \arguments{
-\item{quiet}{If \code{TRUE}, all output is suppressed.}
+\item{quiet}{Should all output be suppressed?}
 }
 \description{
 Automatically update package files

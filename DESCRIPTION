@@ -19,4 +19,5 @@ Imports:
     devtools,
     usethis (>= 1.6.0),
     magrittr,
-    stringr
+    stringr,
+    rlang
