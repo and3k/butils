@@ -1,6 +1,6 @@
 Package: butils
 Title: Miscellaneous Utility Functions
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R:
     person(given = "Bela",
            family = "Hausmann",
@@ -16,4 +16,7 @@ RoxygenNote: 7.1.0
 Imports: 
     lintr,
     rcmdcheck,
-    devtools
+    devtools,
+    usethis (>= 1.6.0.9000),
+    magrittr,
+    stringr
