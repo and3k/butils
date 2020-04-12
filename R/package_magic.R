@@ -26,7 +26,7 @@ create_package_files <- function(quiet = TRUE, github_actions = TRUE) {
 #' Automatically create package files for GitHub Actions
 #'
 #' @inheritParams package_magic
-create_package_files_for_github_actions <- function(quiet = TRUE, github_actions = TRUE) {
+create_package_files_for_github_actions <- function(quiet = TRUE) {
   # GitHub Action for R CMD check:
 
   github_action_check_path <-
