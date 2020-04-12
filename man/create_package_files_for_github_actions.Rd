@@ -4,12 +4,10 @@
 \alias{create_package_files_for_github_actions}
 \title{Automatically create package files for GitHub Actions}
 \usage{
-create_package_files_for_github_actions(quiet = TRUE, github_actions = TRUE)
+create_package_files_for_github_actions(quiet = TRUE)
 }
 \arguments{
 \item{quiet}{Should all output be suppressed?}
-
-\item{github_actions}{Should GitHub Action files be written?}
 }
 \description{
 Automatically create package files for GitHub Actions
