@@ -1,0 +1,15 @@
+Package: butils
+Title: Miscellaneous Utility Functions
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "Bela",
+           family = "Hausmann",
+           role = c("aut", "cre"),
+           email = "belahausmann@fsfe.org",
+           comment = c(ORCID = "https://orcid.org/0000-0002-0846-1202"))
+Description: A random assortment of utility functions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
