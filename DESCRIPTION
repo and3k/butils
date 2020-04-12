@@ -17,6 +17,6 @@ Imports:
     lintr,
     rcmdcheck,
     devtools,
-    usethis (>= 1.6.0.9000),
+    usethis (>= 1.6.0),
     magrittr,
     stringr
