@@ -38,8 +38,9 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
   }
   usethis::use_github_action("check-standard.yaml", save_as = "R-CMD-check.yaml")
   github_action_check_path %>%
-    usethis:::read_utf8() %>%
+    readLines() %>%
     stringr::str_replace("^(name:).+", "\\1 R CMD check") %>%
+    stringr::str_subset("r: 'devel'", negate = TRUE) %>%
     cat(file = github_action_check_path, sep = "\n")
 
   # GitHub Action for lintr:
