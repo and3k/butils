@@ -4,10 +4,16 @@
 \alias{validate_package_files}
 \title{Automatically update package files}
 \usage{
-validate_package_files(quiet = TRUE, error_on = "note")
+validate_package_files(
+  quiet = TRUE,
+  rcmdcheck_args = "--no-manual",
+  error_on = "note"
+)
 }
 \arguments{
 \item{quiet}{Should all output be suppressed?}
+
+\item{rcmdcheck_args}{Passed on to \code{args} argument in \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck()}}.}
 
 \item{error_on}{Whether to throw an error on \code{R CMD check} failures.
 Note that the check is always completed (unless a timeout happens),

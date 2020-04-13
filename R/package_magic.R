@@ -2,16 +2,17 @@
 #'
 #' @param quiet Should all output be suppressed?
 #' @param github_actions Should GitHub Action files be written?
+#' @param rcmdcheck_args Passed on to `args` argument in [rcmdcheck::rcmdcheck()].
 #' @inheritParams rcmdcheck::rcmdcheck
 #' @examples
 #' \dontrun{
 #' package_magic()
 #' }
 #' @export
-package_magic <- function(quiet = TRUE, github_actions = TRUE, error_on = "note") {
+package_magic <- function(quiet = TRUE, github_actions = TRUE, rcmdcheck_args = "--no-manual", error_on = "note") {
   create_package_files(quiet = quiet, github_actions = github_actions)
   update_package_files(quiet = quiet)
-  validate_package_files(quiet = quiet, error_on = error_on)
+  validate_package_files(quiet = quiet, rcmdcheck_args = rcmdcheck_args, error_on = error_on)
 }
 
 #' Automatically create package files
@@ -41,6 +42,8 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
     readLines() %>%
     stringr::str_replace("^(name:).+", "\\1 R CMD check") %>%
     stringr::str_subset("r: 'devel'", negate = TRUE) %>%
+    stringr::str_replace("error_on = \"warning\"", "error_on = \"note\"") %>%
+    stringr::str_remove(", \"--as-cran\"") %>%
     cat(file = github_action_check_path, sep = "\n")
 
   # GitHub Action for lintr:
@@ -59,7 +62,7 @@ update_package_files <- function(quiet = TRUE) {
 #' This function is read-only.
 #'
 #' @inheritParams package_magic
-validate_package_files <- function(quiet = TRUE, error_on = "note") {
+validate_package_files <- function(quiet = TRUE, rcmdcheck_args = "--no-manual", error_on = "note") {
   lintr::lint_package()
-  rcmdcheck::rcmdcheck(quiet = quiet, error_on = error_on)
+  rcmdcheck::rcmdcheck(quiet = quiet, args = rcmdcheck_args, error_on = error_on)
 }

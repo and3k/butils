@@ -4,12 +4,19 @@
 \alias{package_magic}
 \title{Automatically create, update, and validate package files}
 \usage{
-package_magic(quiet = TRUE, github_actions = TRUE, error_on = "note")
+package_magic(
+  quiet = TRUE,
+  github_actions = TRUE,
+  rcmdcheck_args = "--no-manual",
+  error_on = "note"
+)
 }
 \arguments{
 \item{quiet}{Should all output be suppressed?}
 
 \item{github_actions}{Should GitHub Action files be written?}
+
+\item{rcmdcheck_args}{Passed on to \code{args} argument in \code{\link[rcmdcheck:rcmdcheck]{rcmdcheck::rcmdcheck()}}.}
 
 \item{error_on}{Whether to throw an error on \code{R CMD check} failures.
 Note that the check is always completed (unless a timeout happens),
