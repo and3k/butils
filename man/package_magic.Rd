@@ -6,6 +6,7 @@
 \usage{
 package_magic(
   quiet = TRUE,
+  lang = "en-GB",
   github_actions = TRUE,
   rcmdcheck_args = "--no-manual",
   error_on = "note"
@@ -13,6 +14,9 @@ package_magic(
 }
 \arguments{
 \item{quiet}{Should all output be suppressed?}
+
+\item{lang}{Preferred spelling language. Usually either \code{"en-US"} or
+\code{"en-GB"}.}
 
 \item{github_actions}{Should GitHub Action files be written?}
 

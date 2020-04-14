@@ -1,6 +1,6 @@
 Package: butils
 Title: Miscellaneous Utility Functions
-Version: 0.0.0.9005
+Version: 0.0.0.9006
 Authors@R:
     person(given = "Bela",
            family = "Hausmann",
@@ -19,8 +19,10 @@ Imports:
     styler,
     usethis (>= 1.6.0)
 Suggests: 
+    spelling,
     testthat
 Encoding: UTF-8
+Language: en-GB
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0

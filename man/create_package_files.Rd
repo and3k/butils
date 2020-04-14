@@ -4,10 +4,13 @@
 \alias{create_package_files}
 \title{Automatically create package files}
 \usage{
-create_package_files(quiet = TRUE, github_actions = TRUE)
+create_package_files(quiet = TRUE, lang = "en-GB", github_actions = TRUE)
 }
 \arguments{
 \item{quiet}{Should all output be suppressed?}
+
+\item{lang}{Preferred spelling language. Usually either \code{"en-US"} or
+\code{"en-GB"}.}
 
 \item{github_actions}{Should GitHub Action files be written?}
 }
