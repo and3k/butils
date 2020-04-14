@@ -60,6 +60,8 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
 #'
 #' @inheritParams package_magic
 update_package_files <- function(quiet = TRUE) {
+  usethis::use_tidy_description()
+
   devtools::document(quiet = quiet)
 }
 
