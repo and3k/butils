@@ -19,6 +19,11 @@ package_magic <- function(quiet = TRUE, github_actions = TRUE, rcmdcheck_args = 
 #'
 #' @inheritParams package_magic
 create_package_files <- function(quiet = TRUE, github_actions = TRUE) {
+  # TODO: quiet is not working because use_testthat() has no quiet argument
+  # NOTE: this will cause an R CMD check if there are no tests
+  #  i.e., a test needs to added too usethis::use_test('fun')
+  usethis::use_testthat()
+
   if(rlang::is_true(github_actions)) {
     create_package_files_for_github_actions(quiet = quiet)
   }
@@ -37,6 +42,7 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
     # by use_github_action()
     file.remove(github_action_check_path)
   }
+  # TODO: quiet is not working because use_github_action() has no quiet arg
   usethis::use_github_action("check-standard.yaml", save_as = "R-CMD-check.yaml")
   github_action_check_path %>%
     readLines() %>%
@@ -63,6 +69,10 @@ update_package_files <- function(quiet = TRUE) {
 #'
 #' @inheritParams package_magic
 validate_package_files <- function(quiet = TRUE, rcmdcheck_args = "--no-manual", error_on = "note") {
+  # TODO: this isn’t acutally working
+  # TODO: quiet is not working: there are dots printed
   lintr::lint_package()
+
+  # TODO: quiet is not working: the final results are still printed
   rcmdcheck::rcmdcheck(quiet = quiet, args = rcmdcheck_args, error_on = error_on)
 }

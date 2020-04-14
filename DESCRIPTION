@@ -1,6 +1,6 @@
 Package: butils
 Title: Miscellaneous Utility Functions
-Version: 0.0.0.9004
+Version: 0.0.0.9005
 Authors@R:
     person(given = "Bela",
            family = "Hausmann",
@@ -21,3 +21,5 @@ Imports:
     magrittr,
     stringr,
     rlang
+Suggests: 
+    testthat
