@@ -24,7 +24,7 @@ create_package_files <- function(quiet = TRUE, github_actions = TRUE) {
   #  i.e., a test needs to added too usethis::use_test('fun')
   usethis::use_testthat()
 
-  if(rlang::is_true(github_actions)) {
+  if (rlang::is_true(github_actions)) {
     create_package_files_for_github_actions(quiet = quiet)
   }
 }
@@ -37,7 +37,7 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
 
   github_action_check_path <-
     usethis::proj_path(".github", "workflows", "R-CMD-check.yaml")
-  if(file.exists(github_action_check_path)) {
+  if (file.exists(github_action_check_path)) {
     # delete first because modified files can not be quietly overwritten
     # by use_github_action()
     file.remove(github_action_check_path)
@@ -61,6 +61,9 @@ create_package_files_for_github_actions <- function(quiet = TRUE) {
 #' @inheritParams package_magic
 update_package_files <- function(quiet = TRUE) {
   usethis::use_tidy_description()
+
+  # TODO: quiet is not working because style_pkg() has no quiet argument
+  styler::style_pkg(usethis::proj_get())
 
   devtools::document(quiet = quiet)
 }
