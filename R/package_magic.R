@@ -85,6 +85,10 @@ validate_package_files <- function(quiet = TRUE, rcmdcheck_args = "--no-manual",
   lint_result <- lintr::lint_package()
   print(lint_result)
 
-  # TODO: quiet is not working: the final results are still printed
-  rcmdcheck::rcmdcheck(quiet = quiet, args = rcmdcheck_args, error_on = error_on)
+  if (rstudioapi::isAvailable()) {
+    rstudioapi::executeCommand("checkPackage")
+  } else {
+    # TODO: quiet is not working: the final results are still printed
+    rcmdcheck::rcmdcheck(quiet = quiet, args = rcmdcheck_args, error_on = error_on)
+  }
 }

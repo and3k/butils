@@ -1,6 +1,6 @@
 Package: butils
 Title: Miscellaneous Utility Functions
-Version: 0.0.0.9007
+Version: 0.0.0.9008
 Authors@R:
     person(given = "Bela",
            family = "Hausmann",
@@ -15,6 +15,7 @@ Imports:
     magrittr,
     rcmdcheck,
     rlang,
+    rstudioapi (>= 0.10),
     stringr,
     styler,
     usethis (>= 1.6.0)
