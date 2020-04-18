@@ -1,0 +1,4 @@
+Name: Package magic
+Description: Runs butils::package_magic
+Binding: package_magic
+Interactive: true
