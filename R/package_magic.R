@@ -42,6 +42,15 @@ package_magic <- function(quiet = TRUE, lang = "en-GB",
 #' @inheritParams package_magic
 create_package_files <- function(quiet = TRUE, lang = "en-GB",
                                  github_actions = TRUE) {
+  if (!file.exists(usethis::proj_path("DESCRIPTION"))) {
+    usethis::use_description()
+  }
+  if (!file.exists(usethis::proj_path("NAMESPACE"))) {
+    usethis::use_namespace()
+  }
+
+  # TODO: use_rstudio
+
   # TODO: quiet is not working because use_testthat() has no quiet argument
   # NOTE: this will cause an R CMD check if there are no tests
   #  i.e., a test needs to added too usethis::use_test('fun')
