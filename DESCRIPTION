@@ -1,6 +1,6 @@
 Package: butils
 Title: Miscellaneous Utility Functions
-Version: 0.0.0.9010
+Version: 0.0.0.9011
 Authors@R:
     person(given = "Bela",
            family = "Hausmann",

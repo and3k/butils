@@ -49,7 +49,7 @@ create_package_files <- function(quiet = TRUE, lang = "en-GB",
     usethis::use_namespace()
   }
 
-  # TODO: use_rstudio
+  usethis::use_rstudio()
 
   # TODO: quiet is not working because use_testthat() has no quiet argument
   # NOTE: this will cause an R CMD check if there are no tests
