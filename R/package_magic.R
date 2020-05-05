@@ -49,7 +49,9 @@ create_package_files <- function(quiet = TRUE, lang = "en-GB",
     usethis::use_namespace()
   }
 
-  usethis::use_rstudio()
+  # disabled for now
+  # https://github.com/r-lib/usethis/issues/1130
+  # TODO: use_rstudio
 
   gitignore_from <-
     "https://raw.githubusercontent.com/github/gitignore/master/R.gitignore"
