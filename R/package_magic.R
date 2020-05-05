@@ -19,7 +19,7 @@ package_magic <- function(quiet = TRUE, lang = "en-GB",
   #   see devtools::document
 
   if (file.exists(usethis::proj_path(".private"))) {
-    use_build_ignore(".private")
+    usethis::use_build_ignore(".private")
     github_actions <- FALSE
   }
 
