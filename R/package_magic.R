@@ -18,6 +18,11 @@ package_magic <- function(quiet = TRUE, lang = "en-GB",
   # TODO: quiet is not working mostly, take a capture the output approach!
   #   see devtools::document
 
+  if (file.exists(usethis::proj_path(".private"))) {
+    use_build_ignore(".private")
+    github_actions <- FALSE
+  }
+
   create_package_files(
     quiet = quiet,
     lang = lang,
