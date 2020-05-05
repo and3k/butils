@@ -51,6 +51,12 @@ create_package_files <- function(quiet = TRUE, lang = "en-GB",
 
   usethis::use_rstudio()
 
+  gitignore_from <-
+    "https://raw.githubusercontent.com/github/gitignore/master/R.gitignore"
+  gitignore_contents <- readLines(gitignore_from)
+  gitignore_to <- usethis::proj_path(".gitignore")
+  writeLines(gitignore_contents, gitignore_to)
+
   # TODO: quiet is not working because use_testthat() has no quiet argument
   # NOTE: this will cause an R CMD check if there are no tests
   #  i.e., a test needs to added too usethis::use_test('fun')
